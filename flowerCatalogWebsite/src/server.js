@@ -59,7 +59,8 @@ app.post('/login',(req,res)=>{
   user.sessionid = sessionid;
   res.redirect('/home');
 });
-app.post('/comments',handleRequests)
+app.post('/comments',handleRequests);
+app.post('/public/comments',handleRequests);
 app.get('/home',(req,res)=>{
   res.setHeader('Content-type','text/html');
   res.write(`<p>Hello ${req.user.name}</p>`);
@@ -83,7 +84,6 @@ app.get('/Ageratum.html',handleRequests);
 app.get('/pdf/Abeliophyllum.pdf',handleRequests);
 app.get('/pdf/Ageratum.pdf',handleRequests);
 app.get('/data/comments.txt',handleRequests);
-app.get('/public/comments',handleRequests);
 
 const PORT = 5000;
 let server = http.createServer(app);

@@ -48,16 +48,11 @@ let getTime = function () {
 
 let refineComments = function (comments) {
   comments = comments.replace(/\+/g,' ');
-  comments = decodeURIComponent(comments);
-  comments = comments.split('&');
-  let mappedComments = comments.map(replaceEqualsWithColon);
-  let refinedComments = mappedComments.join(" ");
+  refinedComments = decodeURIComponent(comments);
   return refinedComments;
 };
 
-let recordComments = function (data) {
-  let comments = '';
-  comments += data;
+let recordComments = function (comments) {
   let refinedComments = refineComments(comments);
   let time = getTime();
   let commentsToRecord = joinStrings(time,refinedComments) + '\n';
@@ -65,11 +60,10 @@ let recordComments = function (data) {
 };
 
 let handleComments = function (fileName,request,response) {
-  request.on('data', recordComments);
-
-  request.on('end', function () {
-    console.log('response has ended');
-  });
+  let name = `Name: ${request.body.Name}`;
+  let comment = `Comment: ${request.body.Comment}`;
+  let commentsData = joinStrings(name,comment);
+  recordComments(commentsData);
 
   response.writeHead('302',{'location': 'guestPage.html'});
 
