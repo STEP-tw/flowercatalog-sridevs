@@ -24,14 +24,18 @@ let loadUser = (req,res)=>{
     req.user = user;
   }
 };
+let loadHomePage = (req,res)=>{
+  if(req.urlIsOneOf(['/'])) res.redirect('/home.html');
+}
 let redirectLoggedInUserToHome = (req,res)=>{
   if(req.urlIsOneOf(['/','/login']) && req.user) res.redirect('/home');
 }
 let redirectLoggedOutUserToLogin = (req,res)=>{
-  if(req.urlIsOneOf(['/','/home','/logout']) && !req.user) res.redirect('/home.html');
+  if(req.urlIsOneOf(['/home','/logout']) && !req.user) res.redirect('/login');
 }
 
 let app = WebApp.create();
+app.use(loadHomePage);
 app.use(logRequest);
 app.use(loadUser);
 app.use(redirectLoggedInUserToHome);
@@ -55,6 +59,7 @@ app.post('/login',(req,res)=>{
   user.sessionid = sessionid;
   res.redirect('/home');
 });
+app.post('/comments',handleRequests)
 app.get('/home',(req,res)=>{
   res.setHeader('Content-type','text/html');
   res.write(`<p>Hello ${req.user.name}</p>`);
@@ -66,6 +71,20 @@ app.get('/logout',(req,res)=>{
   res.redirect('/login');
 });
 app.get('/home.html',handleRequests);
+app.get('/css/style.css',handleRequests);
+app.get('/images/freshorigins.jpg',handleRequests);
+app.get('/js/flowerWebsite.js',handleRequests);
+app.get('/images/animated-flower-image-0021.gif',handleRequests);
+app.get('/images/pbase-Abeliophyllum.jpg',handleRequests);
+app.get('/images/pbase-Agerantum.jpg',handleRequests);
+app.get('/guestPage.html',handleRequests);
+app.get('/Abeliophyllum.html',handleRequests);
+app.get('/Ageratum.html',handleRequests);
+app.get('/pdf/Abeliophyllum.pdf',handleRequests);
+app.get('/pdf/Ageratum.pdf',handleRequests);
+app.get('/data/comments.txt',handleRequests);
+app.get('/public/comments',handleRequests);
+
 const PORT = 5000;
 let server = http.createServer(app);
 server.on('error',e=>console.error('**error**',e.message));
