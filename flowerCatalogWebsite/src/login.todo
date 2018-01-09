@@ -1,0 +1,7 @@
+login feature:
+  ✔ store registeredAccounts seperately in a file. @done(2018-01-06 11:58) @project(login feature)
+  ☐ create a login feature.
+  ☐ allow user to comment only if he's logged in.
+  ☐ attach a login feature
+  ☐ make sure whether logged person is able to comment.
+  ☐ use ajax instead of redirect

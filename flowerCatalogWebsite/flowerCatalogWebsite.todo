@@ -1,0 +1,38 @@
+FlowerCatalogWebsite:
+  Aim:
+    To build a flower catalog website of four pages.
+
+  Requirements:
+    1.Landing page
+    2.Abeliophyllum page
+    3.Ageratum page
+    4.Guest book page
+
+  Landing Page:
+    ✔ Flower catalog heading with border. @done(2017-12-11 17:26) @project(FlowerCatalogWebsite / Landing Page)
+    ✔ Flower catalog subheading at right hand side. @done(2017-12-11 17:26) @project(FlowerCatalogWebsite / Landing Page)
+    ✔ image of flowers. @done(2017-12-11 17:40) @project(FlowerCatalogWebsite / Landing Page)
+    ✔ Abeliophyllum and Ageratum page link at the right hand side of flower. @done(2017-12-11 18:10) @project(FlowerCatalogWebsite / Landing Page)
+    ✔ A watering jar image which hides for 1 sec if clicked. @done(2017-12-11 18:10) @project(FlowerCatalogWebsite / Landing Page)
+
+  Abeliophyllum page:
+    ✔ image on left. @done(2017-12-11 18:20) @project(FlowerCatalogWebsite / Abeliophyllum page)
+    ✔ centered title on top @done(2017-12-11 18:20) @project(FlowerCatalogWebsite / Abeliophyllum page)
+    ✔ A link to go back to home page. @done(2017-12-11 19:41) @project(FlowerCatalogWebsite / Abeliophyllum page)
+    ✔ Formatted Content on right of image with flower information. @done(2017-12-11 19:26) @project(FlowerCatalogWebsite / Abeliophyllum page)
+    ✔ A link to download Content as pdf. @done(2017-12-11 19:36) @project(FlowerCatalogWebsite / Abeliophyllum page)
+
+  Ageratum page:
+    ✔ image on left. @done(2017-12-11 18:20) @project(FlowerCatalogWebsite / Ageratum page)
+    ✔ centered title on top @done(2017-12-11 18:20) @project(FlowerCatalogWebsite / Ageratum page)
+    ✔ A link to go back to home page. @done(2017-12-11 19:41) @project(FlowerCatalogWebsite / Ageratum page)
+    ✔ Formatted Content on right of image with flower information. @done(2017-12-11 19:26) @project(FlowerCatalogWebsite / Ageratum page)
+    ✔ A link to download Content as pdf. @done(2017-12-11 19:36) @project(FlowerCatalogWebsite / Ageratum page)
+
+  Guest page:
+    ✔ centered title at top. @done(2017-12-11 19:52) @project(FlowerCatalogWebsite / Guest page)
+    ✔ A link to go back to homepage. @done(2017-12-11 19:52) @project(FlowerCatalogWebsite / Guest page)
+    ✔ text fields to take name and a commment. @done(2017-12-12 11:20) @project(FlowerCatalogWebsite / Guest page)
+    ✔ Submit button, which takes the commment. @done(2017-12-12 11:20) @project(FlowerCatalogWebsite / Guest page)
+    ✔ A list of comments until by different guests untill now with date time , @done(2017-12-16 12:54) @project(FlowerCatalogWebsite / Guest page)
+      name and comment of each ordered with latest comment in reverse chronological order.

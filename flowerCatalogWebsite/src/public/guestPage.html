@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Guest book</title>
+  </head>
+  <body>
+    <h1>
+      <a href="home.html"><<</a>
+      Guest book
+    </h1>
+    <h4>Leave a comment</h4>
+    <form action="comments" method="post" >
+      Name:<br>
+      <input id="name" name="Name" type="text"><br>
+      Comment:<br>
+      <textarea id="comments" name="Comment" rows="4" cols="100"></textarea>
+      <br>
+      <script src="./js/flowerWebsite.js" charset="utf-8"></script>
+      <input type="submit" value="submit">
+      <hr>
+      <iframe id="commentBox" src="../data/comments.txt"></iframe>
+      <div id="userComments"></div>
+    </form>
+  </body>
+</html>
