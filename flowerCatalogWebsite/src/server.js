@@ -1,4 +1,5 @@
 let fs = require('fs');
+const handleRequests = require('./serverLib.js').handleRequests;
 const timeStamp = require('./time.js').timeStamp;
 const http = require('http');
 const WebApp = require('./webapp');
@@ -27,7 +28,7 @@ let redirectLoggedInUserToHome = (req,res)=>{
   if(req.urlIsOneOf(['/','/login']) && req.user) res.redirect('/home');
 }
 let redirectLoggedOutUserToLogin = (req,res)=>{
-  if(req.urlIsOneOf(['/','/home','/logout']) && !req.user) res.redirect('/login');
+  if(req.urlIsOneOf(['/','/home','/logout']) && !req.user) res.redirect('/home.html');
 }
 
 let app = WebApp.create();
@@ -35,6 +36,7 @@ app.use(logRequest);
 app.use(loadUser);
 app.use(redirectLoggedInUserToHome);
 app.use(redirectLoggedOutUserToLogin);
+
 app.get('/login',(req,res)=>{
   res.setHeader('Content-type','text/html');
   if(req.cookies.logInFailed) res.write('<p>logIn Failed</p>');
@@ -63,7 +65,7 @@ app.get('/logout',(req,res)=>{
   delete req.user.sessionid;
   res.redirect('/login');
 });
-
+app.get('/home.html',handleRequests);
 const PORT = 5000;
 let server = http.createServer(app);
 server.on('error',e=>console.error('**error**',e.message));
