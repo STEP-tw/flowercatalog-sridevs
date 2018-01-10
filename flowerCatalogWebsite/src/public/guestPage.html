@@ -6,7 +6,13 @@
     <title>Guest book</title>
   </head>
   <body>
-    <button type="button" name="button" onclick="window.location.href='/login'">login</button>
+    <input id="loginButton" type="button" name="button" value="login" onclick="update()">
+    <script type="text/javascript">
+      function update() {
+        document.getElementById("loginButton").style.display = "none";
+        window.location.href='/login';
+      }
+    </script>
     <h1>
       <a href="home.html"><<</a>
       Guest book

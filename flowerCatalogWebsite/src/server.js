@@ -67,7 +67,7 @@ app.get('/home',(req,res)=>{
   res.end();
 });
 app.get('/logout',(req,res)=>{
-  res.setHeader('Set-Cookie',[`loginFailed=false,Expires=${new Date(1).toUTCString()}`,`sessionid=0,Expires=${new Date(1).toUTCString()}`]);
+  res.setHeader('Set-Cookie',[`logInFailed=false;Expires=${new Date(1).toUTCString()}`,`sessionid=0;Expires=${new Date(1).toUTCString()}`]);
   delete req.user.sessionid;
   res.redirect('/login');
 });

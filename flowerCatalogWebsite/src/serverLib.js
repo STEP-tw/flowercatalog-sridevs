@@ -1,6 +1,6 @@
 let fs = require('fs');
 let prependFile = require('prepend-file');
-
+let registered_users = [{userName:'dev',name:'sridevs'},{userName:'harshab',name:'Harsha Vardhana'}];
 let setContentType = function (fileName) {
   let headers = {
     js: {'Content-Type': 'text/javascript'},
@@ -60,6 +60,11 @@ let recordComments = function (comments) {
 };
 
 let handleComments = function (fileName,request,response) {
+  let user = registered_users.find(u=>u.userName==request.body.userName);
+  if (!user) {
+    response.writeHead('302',{'location': '/login'});
+    response.end();
+  }
   let name = `Name: ${request.body.Name}`;
   let comment = `Comment: ${request.body.Comment}`;
   let commentsData = joinStrings(name,comment);
