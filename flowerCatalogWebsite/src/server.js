@@ -44,7 +44,7 @@ app.use(redirectLoggedOutUserToLogin);
 app.get('/login',(req,res)=>{
   res.setHeader('Content-type','text/html');
   if(req.cookies.logInFailed) res.write('<p>logIn Failed</p>');
-  res.write('<form method="POST"> <input name="userName"><input name="place"> <input type="submit"></form>');
+  res.write('<p>kindly login to comment</p><form method="POST"> <input name="userName"><input name="place"> <input type="submit"></form>');
   res.end();
 });
 app.post('/login',(req,res)=>{

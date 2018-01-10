@@ -1,7 +1,8 @@
 login feature:
   ✔ store registeredAccounts seperately in a file. @done(2018-01-06 11:58) @project(login feature)
-  ☐ create a login feature.
-  ☐ allow user to comment only if he's logged in.
-  ☐ attach a login feature
-  ☐ make sure whether logged person is able to comment.
+  ✔ create a login feature. @done(2018-01-10 11:51) @project(login feature)
+  ✔ allow user to comment only if he's logged in. @done(2018-01-10 11:51) @project(login feature)
+  ✔ attach a login feature @done(2018-01-10 11:52) @project(login feature)
+  ✔ make sure whether logged person is able to comment. @done(2018-01-10 11:52) @project(login feature)
+  ☐ once logged in login link should dissappear and name should appear.
   ☐ use ajax instead of redirect
